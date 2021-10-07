@@ -2,7 +2,29 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Col, Row, Card, Button, Form } from "react-bootstrap";
 import CardGenerator from "./components/CardGenerator";
+
+
+const quoteObject = [
+  {
+    quote:
+      "It’s not the years in your life that count. It’s the life in your years.",
+    author: "Abraham Lincoln",
+  },
+  {
+    quote:
+      "It’s not the years in your life that count. It’s the life in your years.",
+    author: "Abraham Lincoln",
+  },
+  {
+    quote:
+      "It’s not the years in your life that count. It’s the life in your years.",
+    author: "Abraham Lincoln",
+  }
+];
+
 function App() {
+
+  
   return (
     <div className="App">
       <Container>
@@ -34,7 +56,7 @@ function App() {
           </Form.Group>
         </Form>
         <Container className="card-container mt-4">
-          <CardGenerator />
+          <CardGenerator quoting={quoteObject}/>
         </Container>
       </Container>
     </div>
