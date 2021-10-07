@@ -1,6 +1,7 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Col, Row, Card, Button, Form } from "react-bootstrap";
+import CardGenerator from "./components/CardGenerator";
 function App() {
   return (
     <div className="App">
@@ -32,6 +33,9 @@ function App() {
             </Row>
           </Form.Group>
         </Form>
+        <Container className="card-container mt-4">
+          <CardGenerator />
+        </Container>
       </Container>
     </div>
   );
