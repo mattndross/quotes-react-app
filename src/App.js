@@ -1,7 +1,9 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Col, Row, Card, Button, Form } from "react-bootstrap";
+import { Container, Col, Row, Button, Form } from "react-bootstrap";
 import CardGenerator from "./components/CardGenerator";
+import { useState } from "react";
+import ButtonRandom from "./components/ButtonRandom";
 
 
 const quoteObject = [
@@ -23,8 +25,9 @@ const quoteObject = [
 ];
 
 function App() {
+  const [quoteState, setQuoteState] = useState(quoteObject);  
 
-  
+
   return (
     <div className="App">
       <Container>
@@ -47,7 +50,7 @@ function App() {
                   </Col>
                   <Col>
                     <Row>
-                      <Button>RANDOM</Button>
+                      <ButtonRandom />
                     </Row>
                   </Col>
                 </Row>
@@ -56,7 +59,7 @@ function App() {
           </Form.Group>
         </Form>
         <Container className="card-container mt-4">
-          <CardGenerator quoting={quoteObject}/>
+          <CardGenerator quoting={quoteState}/>
         </Container>
       </Container>
     </div>
