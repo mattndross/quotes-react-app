@@ -2,7 +2,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Col, Row, Button, Form } from "react-bootstrap";
 import CardGenerator from "./components/CardGenerator";
-import { useState } from "react";
+import React, { useState } from "react";
 import ButtonRandom from "./components/ButtonRandom";
 
 
@@ -23,6 +23,8 @@ const quoteObject = [
     author: "Abraham Lincoln",
   }
 ];
+
+export const QuoteContext = React.createContext();
 
 function App() {
   const [quoteState, setQuoteState] = useState(quoteObject);  
@@ -50,7 +52,9 @@ function App() {
                   </Col>
                   <Col>
                     <Row>
+                      <QuoteContext.Provider value={setQuoteState}>
                       <ButtonRandom />
+                      </QuoteContext.Provider>
                     </Row>
                   </Col>
                 </Row>
